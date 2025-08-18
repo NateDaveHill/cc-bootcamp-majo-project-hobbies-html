@@ -2,6 +2,29 @@ body {
     font-family: "Press Start 2P", cursive, sans-serif, Courier, monospace;
 }
 
+.card {
+    background: #1111;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 255, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+    color: #0f0;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 6px 6px 20px rgba(0, 255, 0, 0.65);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
 .logo-img {
     width: 100px;
     aspect-ratio: 1 / 1; /* forces square */
@@ -53,9 +76,98 @@ body {
     grid-area: footing;
 }
 
+.carousel-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
 footer {
     font-family: "Press Start 2P";
     border: 1px solid black;
     border-radius: 5px;
     height: 5rem;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  .mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
 }

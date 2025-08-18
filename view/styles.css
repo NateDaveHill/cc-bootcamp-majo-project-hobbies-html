@@ -1,0 +1,61 @@
+body {
+    font-family: "Press Start 2P", cursive, sans-serif, Courier, monospace;
+}
+
+.logo-img {
+    width: 100px;
+    aspect-ratio: 1 / 1; /* forces square */
+    object-fit: cover;
+    object-position: top;
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1) rotate(25deg);
+    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.6);
+}
+
+.container {
+    font-family: "Press Start 2P";
+    margin: 50px;
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-template-areas: "main main sidebar "
+                         "main main sidebar"
+                         "footing footing footing";
+}
+
+.navbar-nav {
+    font-family: "Press Start 2P";
+}
+
+.main-box {
+    border: 1px solid black;
+    border-radius: 5px;
+    grid-area: sidebar;
+}
+
+.aside-box {
+    border: 1px solid black;
+    border-radius: 5px;
+    grid-area: main;
+}
+
+.carousel-box {
+    height: 50vh;
+    border: 1px solid black;
+    border-radius: 5px;
+    grid-area: footing;
+}
+
+footer {
+    font-family: "Press Start 2P";
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 5rem;
+}

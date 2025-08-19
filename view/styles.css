@@ -25,6 +25,22 @@ body {
     display: block;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  column-gap: 5px;
+  row-gap: 15px;   
+}
+
+.card .user-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border-radius: 20px;
+  padding: 0%;
+}
+
 .logo-img {
     width: 100px;
     aspect-ratio: 1 / 1; /* forces square */
@@ -86,6 +102,18 @@ body {
     object-fit: cover;
     border-radius: 5px;
     display: block;
+}
+
+.user-box {
+
+  font-family: "Press Start 2P";
+  width: 75%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0;
+  overflow: hidden;
+  margin: 15px auto;
+  padding: 15px;
 }
 
 footer {

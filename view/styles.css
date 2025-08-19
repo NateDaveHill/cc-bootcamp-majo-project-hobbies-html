@@ -1,127 +1,142 @@
 body {
-    font-family: "Press Start 2P", cursive, sans-serif, Courier, monospace;
+  font-family: "Press Start 2P", cursive, sans-serif, Courier, monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply box-sizing to all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 .card {
-    background: #1111;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 4px 4px 15px rgba(0, 255, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3 ease;
-    color: #0f0;
-    object-fit: cover;
+  background: #1111;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 4px 4px 15px rgba(0, 255, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #0f0;
 }
 
 .card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 6px 6px 20px rgba(0, 255, 0, 0.65);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 6px 6px 20px rgba(0, 255, 0, 0.65);
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  column-gap: 5px;
-  row-gap: 15px;   
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  column-gap: 15px;
+  row-gap: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 .card .user-img {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 10px;
   border-radius: 20px;
-  padding: 0%;
+  padding: 0;
 }
 
 .logo-img {
-    width: 100px;
-    aspect-ratio: 1 / 1; /* forces square */
-    object-fit: cover;
-    object-position: top;
-    border-radius: 100%;
-    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 100%;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-img:hover {
-    transform: scale(1.1) rotate(25deg);
-    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.6);
+  transform: scale(1.1) rotate(25deg);
+  box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.6);
 }
 
 .container {
-    font-family: "Press Start 2P";
-    margin: 50px;
-    display: grid;
-    height: 100vh;
-    width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 3fr;
-    grid-gap: 20px;
-    grid-template-areas: "main main sidebar "
-                         "main main sidebar"
-                         "footing footing footing";
+  font-family: "Press Start 2P";
+  margin: 0;
+  padding: 20px;
+  min-width: 75%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-gap: 20px;
+  grid-template-areas: 
+      "main sidebar"
+      "footing footing";
 }
 
 .navbar-nav {
-    font-family: "Press Start 2P";
+  font-family: "Press Start 2P";
 }
 
 .main-box {
-    border: 1px solid black;
-    border-radius: 5px;
-    grid-area: sidebar;
+  border: 1px solid black;
+  border-radius: 5px;
+  grid-area: sidebar;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 .aside-box {
-    border: 1px solid black;
-    border-radius: 5px;
-    grid-area: main;
-    object-fit: contain;
+  border: 1px solid black;
+  border-radius: 5px;
+  grid-area: main;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-box {
-    height: 80vh;
-    border: 1px solid black;
-    border-radius: 5px;
-    grid-area: footing;
-    padding: 0;
-    overflow: hidden;
+  border: 1px solid black;
+  border-radius: 5px;
+  grid-area: footing;
+  padding: 0;
+  overflow: hidden;
+  min-height: 400px;
+  width: 100%;
+  height: 100%;
 }
 
 .carousel-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
 }
 
 .user-box {
-
   font-family: "Press Start 2P";
-  width: 75%;
-  height: 500px;
+  width: 100%;
+  max-width: 60%;
   border: 1px solid black;
   border-radius: 5px;
-  padding: 0;
-  overflow: hidden;
   margin: 15px auto;
   padding: 15px;
 }
 
 footer {
-    font-family: "Press Start 2P";
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 5rem;
+  font-family: "Press Start 2P";
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 5rem;
+  padding: 15px;
 }
 
 /* Slideshow container */
@@ -130,19 +145,20 @@ footer {
   position: relative;
   margin: 0;
   height: 100%;
+  min-height: 400px;
 }
 
 .mySlides {
-    display: none;
-    width: 100%;
-    height: 100%;
-  }
+  display: none;
+  width: 100%;
+  height: 100%;
+}
 
-  .mySlides img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* Next & previous buttons */
 .prev, .next {
@@ -159,15 +175,14 @@ footer {
   border-radius: 0 3px 3px 0;
   user-select: none;
   z-index: 10;
+  background-color: rgba(0,0,0,0.5);
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -181,6 +196,7 @@ footer {
   bottom: 8px;
   width: 100%;
   text-align: center;
+  background-color: rgba(0,0,0,0.5);
 }
 
 /* Number text (1/3 etc) */
@@ -190,9 +206,139 @@ footer {
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  background-color: rgba(0,0,0,0.5);
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
+/* Mobile Responsive Breakpoints */
+
+/* Large tablets and small desktops */
+@media screen and (max-width: 1024px) {
+  .container {
+      width: 100%;
+      grid-gap: 15px;
+  }
+  
+  .grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  .container {
+      width: 100%;
+      height: 100vh;
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+          "sidebar"
+          "main"
+          "footing";
+      padding: 15px;
+  }
+  
+  .grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      column-gap: 10px;
+      row-gap: 10px;
+  }
+  
+  .user-box {
+      max-width: 90%;
+      padding: 10px;
+  }
+  
+  .logo-img {
+      width: 80px;
+  }
+  
+  .card .user-img {
+      width: 60px;
+      height: 60px;
+  }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  .container {
+      width: 100%;
+      height: 100vh;
+      padding: 10px;
+      grid-gap: 10px;
+  }
+  
+  .grid {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      column-gap: 8px;
+      row-gap: 8px;
+  }
+  
+  .card {
+      padding: 15px;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+      overflow: auto;
+      transform: scale(0.4);
+      transform-origin: top left;
+  }
+  
+  .user-box {
+      max-width: 100%;
+      margin: 10px auto;
+      padding: 10px;
+  }
+  
+  .logo-img {
+      width: 60px;
+  }
+  
+  .card .user-img {
+      width: 50px;
+      height: 50px;
+  }
+  
+  .carousel-box {
+      min-height: 250px;
+  }
+  
+  .slideshow-container {
+      min-height: 250px;
+  }
+  
+  .prev, .next {
+      padding: 12px;
+      font-size: 14px;
+  }
+  
+  .text {
+      font-size: 12px;
+      padding: 6px 8px;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 320px) {
+  .container {
+      width: 100%;
+      height: 100vh;
+      padding: 5px;
+  }
+  
+  .grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  
+  .card {
+      padding: 10px;
+  }
+  
+  .prev, .next {
+      padding: 8px;
+      font-size: 12px;
+  }
+  
+  .text {
+      font-size: 10px;
+  }
 }

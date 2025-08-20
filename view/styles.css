@@ -100,6 +100,8 @@ div.card {
   padding: 15px;
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-box .carousel-inner,
@@ -172,7 +174,6 @@ footer {
           "sidebar"
           "main"
           "footing";
-      padding: 15px;
   }
   
   .grid {
@@ -252,5 +253,182 @@ footer {
   
   .card {
       padding: 10px;
+  }
+}
+
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  width: 100px;
+  height: 100%;
+  opacity: 0.3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100px;
+  color: #0f0;
+  font-size: 12px;
+  font-family: "Press Start 2P";
+  animation: matrix-fall var(--duration, 3s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.matrix-column:nth-child(1) { left: 10px; }
+.matrix-column:nth-child(2) { left: 25px; }
+.matrix-column:nth-child(3) { left: 40px; }
+.matrix-column:nth-child(4) { left: 55px; }
+.matrix-column:nth-child(5) { left: 70px; }
+
+@keyframes matrix-fall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px));
+    opacity: 0;
+  }
+}
+
+/* Hobby List Styling */
+.hobby-list {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  position: relative;
+  color: #0f0;
+  animation: glitch-flicker 4s ease-in-out infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-1 2s infinite;
+  color: #ff0040;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-2 3s infinite;
+  color: #00ffff;
+  z-index: -2;
+}
+
+@keyframes glitch-flicker {
+  0%, 98% { opacity: 1; }
+  99% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0);
+  }
+  15%, 49% {
+    transform: translate(-2px, 1px);
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translate(0);
+  }
+  21%, 62% {
+    transform: translate(2px, -1px);
+  }
+}
+
+/* Terminal Cursor */
+.terminal-cursor {
+  animation: cursor-blink 1s step-end infinite;
+  color: #0f0;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Binary Text Animation */
+.binary-text {
+  opacity: 0;
+  animation: binary-reveal 0.3s ease-in forwards;
+  transition: color 0.3s ease;
+}
+
+.binary-text:nth-child(2) { animation-delay: 0.1s; }
+.binary-text:nth-child(3) { animation-delay: 0.2s; }
+.binary-text:nth-child(4) { animation-delay: 0.3s; }
+.binary-text:nth-child(5) { animation-delay: 0.4s; }
+.binary-text:nth-child(6) { animation-delay: 0.5s; }
+.binary-text:nth-child(7) { animation-delay: 0.6s; }
+.binary-text:nth-child(8) { animation-delay: 0.7s; }
+.binary-text:nth-child(9) { animation-delay: 0.8s; }
+.binary-text:nth-child(10) { animation-delay: 0.9s; }
+.binary-text:nth-child(11) { animation-delay: 1.0s; }
+.binary-text:nth-child(12) { animation-delay: 1.1s; }
+.binary-text:nth-child(13) { animation-delay: 1.2s; }
+.binary-text:nth-child(14) { animation-delay: 1.3s; }
+.binary-text:nth-child(15) { animation-delay: 1.4s; }
+.binary-text:nth-child(16) { animation-delay: 1.5s; }
+.binary-text:nth-child(17) { animation-delay: 1.6s; }
+.binary-text:nth-child(18) { animation-delay: 1.7s; }
+.binary-text:nth-child(19) { animation-delay: 1.8s; }
+
+.binary-text:hover {
+  color: #ff0;
+  text-shadow: 0 0 10px #ff0;
+  cursor: crosshair;
+}
+
+@keyframes binary-reveal {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reveal Text Animation */
+.reveal-text {
+  color: #ff0040;
+  font-weight: bold;
+  animation: text-glow 2s ease-in-out infinite alternate;
+  animation-delay: 2s;
+}
+
+@keyframes text-glow {
+  from {
+    text-shadow: 0 0 5px #ff0040;
+  }
+  to {
+    text-shadow: 0 0 20px #ff0040, 0 0 30px #ff0040;
   }
 }

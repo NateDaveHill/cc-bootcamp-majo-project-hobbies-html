@@ -1,9 +1,4 @@
-let slideIndex = 1;
 document.addEventListener("DOMContentLoaded", () => {
-  showSlides(slideIndex);
-
-  // Optional: autoplay every 3s
-  // setInterval(() => plusSlides(1), 3000);
 
   fetch('https://randomuser.me/api/?results=42')
     .then(response => response.json())
@@ -29,23 +24,3 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(error => console.error('Error fetching users:', error));
 });
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  const slides = document.getElementsByClassName("mySlides");
-  if (!slides.length) return; // Prevent error if no slides exist
-
-  if (n > slides.length) slideIndex = 1;
-  if (n < 1) slideIndex = slides.length;
-
-  Array.from(slides).forEach(slide => slide.style.display = "none");
-
-  slides[slideIndex - 1].style.display = "block";
-}

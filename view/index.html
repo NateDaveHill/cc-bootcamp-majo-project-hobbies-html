@@ -83,41 +83,51 @@
         </div>
         <div class="carousel-box card">
           <div class="slideshow-container">
-            <div class="mySlides">
-              <div class="numbertext">1 / 6</div>
-              <img src="../assets/coding.jpg" style="width: 100%" />
-              <div class="text">coding</div>
+            <div id="codingCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#codingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#codingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#codingCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#codingCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#codingCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#codingCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../assets/coding.jpg" class="d-block w-100" alt="coding" />
+              <div class="carousel-caption d-none d-md-block"><h5>coding</h5></div>
             </div>
-            <div class="mySlides">
-              <div class="numbertext">2 / 6</div>
-              <img src="../assets/more-code.avif" style="width: 100%" />
-              <div class="text">more coding</div>
+            <div class="carousel-item">
+              <img src="../assets/more-code.avif" class="d-block w-100" alt="coding" />
+              <div class="carousel-caption d-none d-md-block"><h5>more code</h5></div>
             </div>
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="../assets/laptop.jpg" style="width: 100%" />
-              <div class="text">code code code</div>
+            <div class="carousel-item">
+              <img src="../assets/laptop.jpg" class="d-block w-100" alt="coding" />
+              <div class="carousel-caption d-none d-md-block"><h5>code code code</h5></div>
             </div>
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="../assets/computer.jpg" style="width: 100%" />
-              <div class="text">building code</div>
+            <div class="carousel-item">
+              <img src="../assets/computer.jpg" class="d-block w-100" alt="coding" />
+              <div class="carousel-caption d-none d-md-block"><h5>building code</h5></div>
             </div>
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="../assets/me-coding.avif" style="width: 100%" />
-              <div class="text">me coding</div>
+            <div class="carousel-item">
+              <img src="../assets/me-coding.avif" class="d-block w-100" alt="coding" />
+              <div class="carousel-caption d-none d-md-block"><h5>me coding</h5></div>
             </div>
-            <div class="mySlides">
-              <div class="numbertext">3 / 6</div>
-              <img src="../assets/matrix.jpg" style="width: 100%" />
-              <div class="text">i am code</div>
+            <div class="carousel-item">
+              <img src="../assets/matrix.jpg" class="d-block w-100" alt="coding" />
+              <div class="carousel-caption d-none d-md-block"><h5>i am code</h5></div>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
+          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#codingCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#codingCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
-      </div>
       <div class="user-box card">
         <h1>
           my friends that are absolutely real and not fake generated whom i
@@ -130,5 +140,6 @@
       class="navbar navbar-nav navbar-expand-lg navbar-dark bg-dark text-white">
       <p>"geeky quote of the day that 42 is the meaing of life." ~the coder</p>
     </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

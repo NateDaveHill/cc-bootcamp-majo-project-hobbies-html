@@ -301,6 +301,7 @@ div.card {
 .binary-text:nth-child(18) { animation-delay: 1.7s; }
 .binary-text:nth-child(19) { animation-delay: 1.8s; }
 
+
 .binary-text:hover {
   color: #ff0;
   text-shadow: 0 0 10px #ff0;

@@ -1,0 +1,68 @@
+body {
+    margin: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+h1, h2, h3 {
+    font-family: DynaPuff;
+}
+
+.avatar {
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+}
+ 
+.card {
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background: #FB6107;
+    color: white;
+    border-bottom: 6px solid #7CB518;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.info {
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.border-blue {
+    border: 1px dotted blue;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+  
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

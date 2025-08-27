@@ -44,9 +44,32 @@ main {
   grid-area: main;
   padding: 15px;
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  max-height: var(--aside-height, 500px);
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar for main-box */
+.main-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-box::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.main-box::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0f0, #00ff00aa);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.main-box::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ff00, #0f0);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
 }
 
 .aside-box {
@@ -55,7 +78,10 @@ main {
   grid-area: sidebar;
   padding: 15px;
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-box {
@@ -82,7 +108,20 @@ main {
 
 .carousel-box .carousel-item img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.carousel-box:hover .carousel-item img {
+  transform: scale(1.02);
+}
+
+.carousel-box .carousel-caption {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+  backdrop-filter: blur(5px);
 }
 
 footer {
@@ -102,7 +141,9 @@ footer {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 4px 4px 15px rgba(0, 255, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 div.card {
@@ -111,8 +152,24 @@ div.card {
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 6px 6px 20px rgba(0, 255, 0, 0.65);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 255, 0, 0.4), 0 5px 15px rgba(0, 255, 0, 0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.1), transparent);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.card:hover::before {
+  left: 100%;
 }
 
 .card img {
@@ -121,6 +178,21 @@ div.card {
   object-fit: cover;
   border-radius: 20px;
   display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.aside-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+  display: block;
+  max-height: none;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .card .user-img {
@@ -139,6 +211,18 @@ div.card {
   justify-items: center;
   width: 100%;
   height: 100%;
+  padding: 20px;
+}
+
+.card .user-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.card .user-img:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 255, 0, 0.4);
+  border-color: rgba(0, 255, 0, 0.8);
 }
 
 /* ==========================================================================
@@ -343,6 +427,20 @@ div.card {
   font-family: "Press Start 2P";
 }
 
+.navbar-toggler {
+  border: 2px solid #0f0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  border-color: #ff0040;
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2300ff00' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .hobby-list {
   position: relative;
   z-index: 1;
@@ -354,6 +452,73 @@ div.card {
 /* ==========================================================================
    RESPONSIVE DESIGN - MEDIA QUERIES
    ========================================================================== */
+
+/* Extra Large Desktop Screens (1440px and up) */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    gap: 30px;
+  }
+  
+  .card {
+    padding: 30px;
+    border-radius: 25px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+    gap: 20px;
+  }
+  
+  .carousel-box .carousel-inner,
+  .carousel-box .carousel-item {
+    height: 900px;
+  }
+  
+  .logo-img {
+    width: 120px;
+  }
+}
+
+/* Large Desktop Screens (1200px to 1439px) */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+    gap: 25px;
+  }
+  
+  .card {
+    padding: 25px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
+    gap: 18px;
+  }
+  
+  .carousel-box .carousel-inner,
+  .carousel-box .carousel-item {
+    height: 850px;
+  }
+}
+
+/* Standard Desktop Screens (1025px to 1199px) */
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 22px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 90px));
+    gap: 16px;
+  }
+}
 
 /* Large tablets and small desktops (1024px and down) */
 @media screen and (max-width: 1024px) {
@@ -383,8 +548,8 @@ div.card {
     grid-template-areas: 
         "sidebar"
         "main"
-        "users"
-        "footing";
+        "footing"
+        "users";
     padding: 15px;
   }
   

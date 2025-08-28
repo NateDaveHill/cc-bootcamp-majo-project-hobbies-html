@@ -163,23 +163,23 @@
     font-size: 1.1rem;
     padding-bottom: 0.5rem;
   }
-  
+
   .footer-col p,
   .footer-col li {
     font-size: 0.9rem;
     line-height: 1.5;
   }
-  
+
   .footer-col ul {
     list-style: none;
     padding: 0;
   }
-  
+
   .footer-col a {
     color: #ecf0f1;
     text-decoration: none;
   }
-  
+
   .footer-col a:hover {
     color: #3498db;
   }
@@ -247,8 +247,8 @@ article {
 
   .row {
     display: flex;
-    justify-content: center; 
-    max-width: 1200px; 
+    justify-content: center;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -259,6 +259,7 @@ article {
 }
 
   .images {
+    margin: 25px;
     border-radius: 5px;
 }
 
@@ -279,4 +280,106 @@ article {
 .btn-start:hover, .btn-more:hover {
     transform: translateY(-2px);
     transition: transform 0.3s ease;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .main {
+    padding: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .flex-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+    text-align: center;
+  }
+
+  #first-image, #second-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .btn-flex {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 0.5rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .main {
+    padding: 0.5rem;
+  }
+
+  .main h1 {
+    font-size: 1.5rem;
+  }
+
+  .main h2 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 0.5rem;
+  }
+
+  .btn-start, .btn-more {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  article {
+    padding: 1rem;
+  }
+
+  #first-image {
+    width: 280px;
+  }
+
+  #second-image {
+    width: 250px;
+  }
 }
